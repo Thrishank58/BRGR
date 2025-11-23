@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BRGRR | Build Your Burger</title>
+  <link rel="stylesheet" href="BRGR app.css" />
+</head>
+<body>
+  <header class="header">
+    <h1 class="brand">BRGRR</h1>
+    <div class="session">
+      <form id="login-form" class="login-form">
+        <input id="login-name" type="text" placeholder="Enter your name" aria-label="Enter your name" />
+        <button type="submit" class="btn btn-primary">Start</button>
+      </form>
+      <div id="welcome" class="welcome" aria-live="polite"></div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="builder" aria-labelledby="builder-title">
+      <h2 id="builder-title">Customize your burger</h2>
+
+      <div class="control-group">
+        <label for="bun-select" class="label">Choose your bun</label>
+        <select id="bun-select" class="select" aria-required="true">
+          <option value="">-- Select bun --</option>
+        </select>
+        <div id="bun-feedback" class="feedback" aria-live="polite"></div>
+      </div>
+
+      <div class="control-group">
+        <span class="label">Pick toppings</span>
+        <div id="toppings-grid" class="grid"></div>
+        <div id="topping-feedback" class="feedback" aria-live="polite"></div>
+      </div>
+
+      <div class="summary">
+        <h3>Your burger</h3>
+        <ul id="selected-list" class="selected-list"></ul>
+        <div class="price-row">
+          <span class="label">Total:</span>
+          <span id="total-price" class="price">$0.00</span>
+        </div>
+
+        <div class="actions">
+          <button id="favorite-save" class="btn btn-outline">Save favorite</button>
+          <button id="favorite-apply" class="btn btn-outline">Apply favorite</button>
+          <button id="repeat-last" class="btn btn-outline">Repeat last order</button>
+          <button id="confirm-bun" class="btn btn-secondary" disabled>Confirm bun</button>
+          <button id="checkout" class="btn btn-primary" disabled>Checkout</button>
+        </div>
+
+        <div id="builder-feedback" class="feedback" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="checkout" aria-labelledby="checkout-title">
+      <h2 id="checkout-title">Checkout summary</h2>
+      <div id="checkout-content" class="checkout-content">
+        <p class="muted">Nothing to show yet. Build your burger and checkout.</p>
+      </div>
+    </section>
+
+    <section class="history" aria-labelledby="history-title">
+      <h2 id="history-title">Session order history</h2>
+      <ul id="order-history" class="order-history"></ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>© 2025 BRGRR. Crafted with vanilla HTML, CSS, and JS.</small>
+  </footer>
+
+  <script src="BRGR.js"></script>
+</body>
+</html>

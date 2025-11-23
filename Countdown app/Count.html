@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Event Countdown</title>
+  <link rel="stylesheet" href="Count.css" />
+</head>
+<body>
+  <!-- Hidden reference to the image you uploaded (path provided) -->
+  <!-- Reference URL: /mnt/data/9c397324-9611-460d-be61-ddfa1ffa436f.png -->
+  <img id="refImage" src="/mnt/data/9c397324-9611-460d-be61-ddfa1ffa436f.png" alt="" style="display:none;" />
+
+  <!-- Screen 1: Input form -->
+  <div id="formScreen" class="screen screen--center">
+    <div class="card card--form">
+      <h2 class="card__title">Set Event</h2>
+
+      <label for="eventName">Event Name</label>
+      <input id="eventName" type="text" placeholder="e.g., HackFusion" />
+
+      <label for="eventDate">Select Date & Time</label>
+      <!-- datetime-local allows time selection too -->
+      <input id="eventDate" type="datetime-local" />
+
+      <button id="startBtn" class="btn">Start</button>
+    </div>
+  </div>
+
+  <!-- Screen 2: Countdown (hidden initially) -->
+  <div id="countdownScreen" class="screen screen--center hidden">
+    <div class="card card--countdown">
+      <h2 id="countTitle" class="coming-title">COMING SOON</h2>
+
+      <div class="flip-row">
+        <div class="flip-col">
+          <div class="flip-box"><span id="days" class="num">00</span></div>
+          <div class="label">DAYS</div>
+        </div>
+
+        <div class="flip-col">
+          <div class="flip-box"><span id="hours" class="num">00</span></div>
+          <div class="label">HOURS</div>
+        </div>
+
+        <div class="flip-col">
+          <div class="flip-box"><span id="minutes" class="num">00</span></div>
+          <div class="label">MINUTES</div>
+        </div>
+
+        <div class="flip-col">
+          <div class="flip-box"><span id="seconds" class="num">00</span></div>
+          <div class="label">SECONDS</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script src="Count.js"></script>
+</body>
+</html>
